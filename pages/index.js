@@ -84,7 +84,7 @@ export async function getStaticProps() {
         id: meetup._id.toString(),
       })),
     },
-    //revalidate: 10 //gets fresh data every X seconds
+    revalidate: 1 //gets fresh data every X seconds
   };
 }
 //this only works in page files
