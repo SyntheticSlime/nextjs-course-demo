@@ -34,7 +34,9 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    //fallback: false, //this means that if we add more pages after deployment they wont show up!!!
+    fallback: 'blocking', //now if the app can't find a page it will attempt to generate it.
+    //fallback: true, // this will do the same as blocking but it will load the 404 page and THEN try to load a new page.
     // paths: [
     //   {
     //     params: {
